@@ -26,6 +26,7 @@ venv/
 ENV/
 
 # IDE
+package-lock.json
 .idea/
 .vscode/
 *.swp
