@@ -4,7 +4,7 @@
             "id": "mars",
             "title": "Mars",
             "description": "The Red Planet offers breathtaking vistas of vast deserts, towering volcanoes, and deep canyons. Experience the longest dust storms in the solar system and explore the mysterious Valles Marineris.",
-            "image": "https://images.unsplash.com/photo-1572182574781-792d6a676b4a?w=1200",
+            "image": "https://mars.nasa.gov/system/resources/detail_files/6218_mars-human-exploration-art-astronauts-outpost-vehicle-full2.jpg",
             "hotel": {
                 "name": "Olympus Mons Resort",
                 "description": "Luxury accommodation with stunning views of the largest volcano in the solar system. Features include zero-gravity swimming pool and Martian dust storm viewing deck.",
@@ -30,7 +30,7 @@
             "id": "moon",
             "title": "Moon",
             "description": "Experience the lunar landscape up close. Explore the Sea of Tranquility and witness Earthrise from the lunar surface. Perfect for stargazing and low-gravity activities.",
-            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200",
+            "image": "https://img.freepik.com/premium-photo/luxury-hotel-moon_1015255-127610.jpg",
             "hotel": {
                 "name": "Lunar Colony Resort",
                 "description": "State-of-the-art accommodation featuring lunar regolith walls and panoramic views of the Earth. Includes moon buggy tours and lunar golf.",
@@ -56,7 +56,7 @@
             "id": "iss",
             "title": "International Space Station",
             "description": "Experience life in orbit around Earth. Watch 16 sunrises and sunsets per day while floating through the orbital laboratory. Perfect for zero-gravity experiments and Earth observation.",
-            "image": "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1200",
+            "image": "https://thumbs.dreamstime.com/z/spaceship-hotel-interior-panoramic-window-futuristic-capsule-hostel-bedroom-abstract-generative-ai-illustration-285378487.jpg",
             "hotel": {
                 "name": "Orbital Habitat",
                 "description": "Luxury accommodation in Earth's orbit. Features include zero-gravity sleeping pods and panoramic windows for Earth viewing.",
@@ -82,7 +82,7 @@
             "id": "venus",
             "title": "Venus",
             "description": "The hottest planet in our solar system offers a unique experience of extreme conditions. Explore the Venusian atmosphere from the safety of a floating city.",
-            "image": "https://images.unsplash.com/photo-1621540955018-68b143152b7c?w=1200",
+            "image": "https://th.bing.com/th/id/OIP.gxsScOH3m59HxlFMvhK7kQHaEn?r=0&rs=1&pid=ImgDetMain",
             "hotel": {
                 "name": "Cloud City Resort",
                 "description": "Floating accommodation in Venus' upper atmosphere. Features include pressure-controlled suites and sulfuric acid-proof viewing platforms.",
