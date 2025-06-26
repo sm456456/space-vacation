@@ -1,80 +1,108 @@
 {
-  "destinations": [
-    {
-      "id": "mars",
-      "title": "Mars",
-      "description": "The Red Planet offers breathtaking vistas of vast deserts, towering volcanoes, and deep canyons. Experience the longest dust storms in the solar system and explore the mysterious Valles Marineris.",
-      "image": "https://images.unsplash.com/photo-1572182574781-792d6a676b4a?w=1200",
-      "hotel": {
-        "name": "Olympus Mons Resort",
-        "description": "Luxury accommodation with stunning views of the largest volcano in the solar system. Features include zero-gravity swimming pool and Martian dust storm viewing deck.",
-        "amenities": ["Zero-gravity pool", "Observatory", "Martian cuisine", "Dust storm shelter", "Virtual reality tours", "Martian rover rentals"]
-      },
-      "goodToKnow": [
-        "Mars has about 38% of Earth's gravity",
-        "Temperatures can drop to -140°C at night",
-        "Bring a spacesuit for outdoor activities",
-        "Dust storms can last for months",
-        "Sunsets appear blue due to atmospheric scattering",
-        "One Mars day (sol) is about 24 hours and 37 minutes"
-      ]
-    },
-    {
-      "id": "moon",
-      "title": "Moon",
-      "description": "Experience the lunar landscape up close. Explore the Sea of Tranquility and witness Earthrise from the lunar surface. Perfect for stargazing and low-gravity activities.",
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200",
-      "hotel": {
-        "name": "Lunar Colony Resort",
-        "description": "State-of-the-art accommodation featuring lunar regolith walls and panoramic views of the Earth. Includes moon buggy tours and lunar golf.",
-        "amenities": ["Moon buggy tours", "Lunar golf", "Observatory", "Low-gravity gym", "Moon craters tours", "Lunar rover rentals"]
-      },
-      "goodToKnow": [
-        "Gravity is about 1/6th of Earth's",
-        "Temperatures can reach 127°C during the day",
-        "Lunar dust can be abrasive - protect your equipment",
-        "The moon has no atmosphere",
-        "One lunar day equals about 29.5 Earth days",
-        "Lunar gravity makes jumping 6 times higher than on Earth"
-      ]
-    },
-    {
-      "id": "iss",
-      "title": "International Space Station",
-      "description": "Experience life in orbit around Earth. Watch 16 sunrises and sunsets per day while floating through the orbital laboratory. Perfect for zero-gravity experiments and Earth observation.",
-      "image": "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1200",
-      "hotel": {
-        "name": "Orbital Habitat",
-        "description": "Luxury accommodation in Earth's orbit. Features include zero-gravity sleeping pods and panoramic windows for Earth viewing.",
-        "amenities": ["Zero-gravity sleeping pods", "Observation deck", "Spacewalk training", "Microgravity experiments", "Earth observation", "Astronaut training"]
-      },
-      "goodToKnow": [
-        "Orbits Earth at about 408 km altitude",
-        "Travels at 28,000 km/h",
-        "Complete orbit takes about 90 minutes",
-        "Exposure to cosmic radiation is higher",
-        "Astronauts typically exercise 2 hours daily to maintain muscle mass",
-        "The ISS is the largest human-made structure in space"
-      ]
-    },
-    {
-      "id": "venus",
-      "title": "Venus",
-      "description": "The hottest planet in our solar system offers a unique experience of extreme conditions. Explore the Venusian atmosphere from the safety of a floating city.",
-      "image": "https://images.unsplash.com/photo-1621540955018-68b143152b7c?w=1200",
-      "hotel": {
-        "name": "Cloud City Resort",
-        "description": "Floating accommodation in Venus' upper atmosphere. Features include pressure-controlled suites and sulfuric acid-proof viewing platforms.",
-        "amenities": ["Pressure-controlled suites", "Sulfuric acid-proof viewing platforms", "Atmospheric research", "Cloud surfing", "Pressure chamber tours", "Atmospheric sampling"]
-      },
-      "goodToKnow": [
-        "Surface temperature averages 462°C",
-        "Atmospheric pressure is 90 times Earth's",
-        "A day on Venus is longer than its year",
-        "Surface conditions are inhospitable",
-        "Floating cities are the only safe way to experience Venus",
-        "Venus rotates in the opposite direction to most planets"
-      ]
-    }
-  ]
+    "destinations": [
+        {
+            "id": "mars",
+            "title": "Mars",
+            "description": "The Red Planet offers breathtaking vistas of vast deserts, towering volcanoes, and deep canyons. Experience the longest dust storms in the solar system and explore the mysterious Valles Marineris.",
+            "image": "https://images.unsplash.com/photo-1572182574781-792d6a676b4a?w=1200",
+            "hotel": {
+                "name": "Olympus Mons Resort",
+                "description": "Luxury accommodation with stunning views of the largest volcano in the solar system. Features include zero-gravity swimming pool and Martian dust storm viewing deck.",
+                "amenities": [
+                    "Zero-gravity pool",
+                    "Observatory",
+                    "Martian cuisine",
+                    "Dust storm shelter",
+                    "Virtual reality tours",
+                    "Martian rover rentals"
+                ]
+            },
+            "goodToKnow": [
+                "Mars has about 38% of Earth's gravity",
+                "Temperatures can drop to -140°C at night",
+                "Bring a spacesuit for outdoor activities",
+                "Dust storms can last for months",
+                "Sunsets appear blue due to atmospheric scattering",
+                "One Mars day (sol) is about 24 hours and 37 minutes"
+            ]
+        },
+        {
+            "id": "moon",
+            "title": "Moon",
+            "description": "Experience the lunar landscape up close. Explore the Sea of Tranquility and witness Earthrise from the lunar surface. Perfect for stargazing and low-gravity activities.",
+            "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200",
+            "hotel": {
+                "name": "Lunar Colony Resort",
+                "description": "State-of-the-art accommodation featuring lunar regolith walls and panoramic views of the Earth. Includes moon buggy tours and lunar golf.",
+                "amenities": [
+                    "Moon buggy tours",
+                    "Lunar golf",
+                    "Observatory",
+                    "Low-gravity gym",
+                    "Moon crater tours",
+                    "Lunar rover rentals"
+                ]
+            },
+            "goodToKnow": [
+                "Gravity is about 1/6th of Earth's",
+                "Temperatures can reach 127°C during the day",
+                "Lunar dust can be abrasive - protect your equipment",
+                "The moon has no atmosphere",
+                "One lunar day equals about 29.5 Earth days",
+                "Lunar gravity makes jumping 6 times higher than on Earth"
+            ]
+        },
+        {
+            "id": "iss",
+            "title": "International Space Station",
+            "description": "Experience life in orbit around Earth. Watch 16 sunrises and sunsets per day while floating through the orbital laboratory. Perfect for zero-gravity experiments and Earth observation.",
+            "image": "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1200",
+            "hotel": {
+                "name": "Orbital Habitat",
+                "description": "Luxury accommodation in Earth's orbit. Features include zero-gravity sleeping pods and panoramic windows for Earth viewing.",
+                "amenities": [
+                    "Zero-gravity sleeping pods",
+                    "Observation deck",
+                    "Spacewalk training",
+                    "Microgravity experiments",
+                    "Earth observation",
+                    "Astronaut training"
+                ]
+            },
+            "goodToKnow": [
+                "Orbits Earth at about 408 km altitude",
+                "Travels at 28,000 km/h",
+                "Complete orbit takes about 90 minutes",
+                "Exposure to cosmic radiation is higher",
+                "Astronauts typically exercise 2 hours daily to maintain muscle mass",
+                "The ISS is the largest human-made structure in space"
+            ]
+        },
+        {
+            "id": "venus",
+            "title": "Venus",
+            "description": "The hottest planet in our solar system offers a unique experience of extreme conditions. Explore the Venusian atmosphere from the safety of a floating city.",
+            "image": "https://images.unsplash.com/photo-1621540955018-68b143152b7c?w=1200",
+            "hotel": {
+                "name": "Cloud City Resort",
+                "description": "Floating accommodation in Venus' upper atmosphere. Features include pressure-controlled suites and sulfuric acid-proof viewing platforms.",
+                "amenities": [
+                    "Pressure-controlled suites",
+                    "Sulfuric acid-proof viewing platforms",
+                    "Atmospheric research",
+                    "Cloud surfing",
+                    "Pressure chamber tours",
+                    "Atmospheric sampling"
+                ]
+            },
+            "goodToKnow": [
+                "Surface temperature averages 462°C",
+                "Atmospheric pressure is 90 times Earth's",
+                "A day on Venus is longer than its year",
+                "Surface conditions are inhospitable",
+                "Floating cities are the only safe way to experience Venus",
+                "Venus rotates in the opposite direction to most planets"
+            ]
+        }
+    ]
 }
