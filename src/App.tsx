@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import DestinationsList from './components/DestinationsList';
 import './components/DestinationsList.css';
+import SoundEffects from './components/SoundEffects';
 import { SearchData } from './SearchForm';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <SoundEffects />
       <header className="App-header">
         <h1>Space Vacation</h1>
         <p>Your ultimate space travel experience awaits!</p>

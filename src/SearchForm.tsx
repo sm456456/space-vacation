@@ -183,6 +183,11 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Play lightsaber sound effect
+    if ((window as any).spaceSounds?.playLightsaberSwing) {
+      (window as any).spaceSounds.playLightsaberSwing();
+    }
+    
     if (!destination || !arrivalDate || !returnDate) {
       alert('Please fill in all required fields');
       return;
@@ -344,7 +349,16 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
           </div>
         </div>
 
-        <button type="submit" className="search-btn">
+        <button 
+          type="submit" 
+          className="search-btn"
+          onMouseDown={() => {
+            // Add button click feedback sound
+            if ((window as any).spaceSounds?.playButtonClick) {
+              (window as any).spaceSounds.playButtonClick();
+            }
+          }}
+        >
           <span className="btn-icon">🔍</span>
           Search Space Voyages
         </button>
