@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import SearchForm, { SearchData } from './SearchForm';
+import DestinationsList from './components/DestinationsList';
+import './components/DestinationsList.css';
+import { SearchData } from './SearchForm';
 
 function App() {
   const handleSearch = (searchData: SearchData) => {
@@ -14,7 +16,7 @@ function App() {
       <header className="App-header">
         <h1>Space Vacation</h1>
         <p>Your ultimate space travel experience awaits!</p>
-        <SearchForm onSearch={handleSearch} />
+        <DestinationsList onSearch={handleSearch} />
       </header>
     </div>
   );
