@@ -101,6 +101,13 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
           </button>
         </div>
 
+        {/* Flying Spaceship Animation */}
+        <div className="spaceship-container">
+          <div className="spaceship">
+            🚀
+          </div>
+        </div>
+
         {showMessage && (
           <div className="confirmation-content">
             <div className="force-message">
