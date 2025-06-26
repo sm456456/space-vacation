@@ -183,9 +183,9 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Play lightsaber sound effect
-    if ((window as any).spaceSounds?.playLightsaberSwing) {
-      (window as any).spaceSounds.playLightsaberSwing();
+    // Play spaceship takeoff sound effect
+    if ((window as any).spaceSounds?.playSpaceshipTakeoff) {
+      (window as any).spaceSounds.playSpaceshipTakeoff();
     }
     
     if (!destination || !arrivalDate || !returnDate) {
