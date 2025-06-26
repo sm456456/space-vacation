@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Destination } from '../types';
 import { SearchData } from '../SearchForm';
 import destinationsData from '../destinations.json';
+import BookingConfirmation from './BookingConfirmation';
 import './SearchResults.css';
 
 interface RoomType {
@@ -124,6 +125,8 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [showRoomBooking, setShowRoomBooking] = useState<string | null>(null);
   const [selectedExtras, setSelectedExtras] = useState<string[]>(['regular-suit']); // Regular suit included by default
+  const [showBookingConfirmation, setShowBookingConfirmation] = useState(false);
+  const [bookingDetails, setBookingDetails] = useState<any>(null);
 
   const handleExtraToggle = (extraId: string) => {
     if (extraId === 'regular-suit') return; // Can't remove included items
@@ -133,6 +136,36 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch
         ? prev.filter(id => id !== extraId)
         : [...prev, extraId]
     );
+  };
+
+  const handleConfirmBooking = (destination: Destination) => {
+    if (!selectedRoom) return;
+
+    const selectedRoomData = ROOM_TYPES.find(r => r.id === selectedRoom)!;
+    const duration = calculateDuration(searchData.arrivalDate, searchData.returnDate);
+    
+    // Calculate total cost
+    const roomCost = selectedRoomData.price * duration * searchData.numberOfPeople;
+    const extrasCost = selectedExtras.reduce((sum, extraId) => {
+      const extra = EXTRA_ITEMS.find(e => e.id === extraId);
+      if (!extra || extra.included) return sum;
+      const multiplier = extra.category === 'vehicle' ? duration : searchData.numberOfPeople;
+      return sum + (extra.price * multiplier);
+    }, 0);
+    
+    const totalCost = roomCost + extrasCost;
+
+    // Prepare booking details
+    const details = {
+      destination: destination.title,
+      room: selectedRoomData.name,
+      dates: `${formatDate(searchData.arrivalDate)} - ${formatDate(searchData.returnDate)}`,
+      travelers: searchData.numberOfPeople,
+      totalCost: `€${totalCost.toLocaleString()}`
+    };
+
+    setBookingDetails(details);
+    setShowBookingConfirmation(true);
   };
 
   // Filter destinations based on search criteria
@@ -543,7 +576,10 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch
                           </div>
                         </div>
                         
-                        <button className="confirm-booking-btn">
+                        <button 
+                          className="confirm-booking-btn"
+                          onClick={() => handleConfirmBooking(destination)}
+                        >
                           <span className="btn-icon">🚀</span>
                           Confirm Booking
                         </button>
@@ -556,6 +592,15 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch
           </div>
         ))}
       </div>
+
+      {/* Booking Confirmation Modal */}
+      {showBookingConfirmation && bookingDetails && (
+        <BookingConfirmation
+          isVisible={showBookingConfirmation}
+          onClose={() => setShowBookingConfirmation(false)}
+          bookingDetails={bookingDetails}
+        />
+      )}
     </div>
   );
 };
