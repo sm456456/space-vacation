@@ -4,18 +4,18 @@
 
 .App-header {
   background: linear-gradient(135deg, #0c0c0c 0%, #1a1a3e 50%, #000033 100%);
-  padding: 60px 20px;
+  padding: 40px 20px 60px 20px;
   color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
 }
 
 .App-header h1 {
-  margin: 0;
+  margin: 40px 0 0 0;
   font-size: 3.5rem;
   font-weight: bold;
   background: linear-gradient(45deg, #fff, #ccc, #fff);
@@ -27,7 +27,7 @@
 }
 
 .App-header p {
-  margin-top: 20px;
+  margin: 10px 0 20px 0;
   font-size: 1.2rem;
   opacity: 0.9;
 }
