@@ -6,9 +6,8 @@ import { SearchData } from './SearchForm';
 
 function App() {
   const handleSearch = (searchData: SearchData) => {
-    console.log('Search data:', searchData);
-    // TODO: Implement search functionality
-    alert(`Searching for trips to ${searchData.destination} for ${searchData.numberOfPeople} people from ${searchData.arrivalDate} to ${searchData.returnDate}`);
+    console.log('Search conducted:', searchData);
+    // The DestinationsList component now handles showing search results
   };
 
   return (
