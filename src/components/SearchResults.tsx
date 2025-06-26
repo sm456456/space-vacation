@@ -67,6 +67,54 @@ const ROOM_TYPES: RoomType[] = [
   }
 ];
 
+interface ExtraItem {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  category: 'spacesuit' | 'vehicle';
+  included?: boolean;
+}
+
+const EXTRA_ITEMS: ExtraItem[] = [
+  // Space Suits
+  {
+    id: 'regular-suit',
+    name: 'Standard Space Suit',
+    description: 'Basic EVA suit with life support systems, radiation protection, and communication equipment. Included with all bookings.',
+    image: 'https://images.unsplash.com/photo-1594736797933-d0813ba79027?w=300&h=200&fit=crop',
+    price: 0,
+    category: 'spacesuit',
+    included: true
+  },
+  {
+    id: 'premium-suit',
+    name: 'Premium Space Suit',
+    description: 'Advanced EVA suit with enhanced mobility, extended life support, heads-up display, and premium comfort padding.',
+    image: 'https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=300&h=200&fit=crop',
+    price: 299,
+    category: 'spacesuit'
+  },
+  {
+    id: 'vader-suit',
+    name: 'Darth Vader Themed Suit',
+    description: 'Epic black space suit with Vader-inspired design, dramatic breathing system, and intimidating presence. May the force be with you!',
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop',
+    price: 599,
+    category: 'spacesuit'
+  },
+  // Vehicles
+  {
+    id: 'space-buggy',
+    name: 'Space Exploration Buggy',
+    description: 'All-terrain space vehicle for surface exploration. Features pressurized cabin, scientific equipment, and 8-hour battery life.',
+    image: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=200&fit=crop',
+    price: 199,
+    category: 'vehicle'
+  }
+];
+
 interface SearchResultsProps {
   searchData: SearchData;
   onClearSearch: () => void;
@@ -75,6 +123,17 @@ interface SearchResultsProps {
 const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch }) => {
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [showRoomBooking, setShowRoomBooking] = useState<string | null>(null);
+  const [selectedExtras, setSelectedExtras] = useState<string[]>(['regular-suit']); // Regular suit included by default
+
+  const handleExtraToggle = (extraId: string) => {
+    if (extraId === 'regular-suit') return; // Can't remove included items
+    
+    setSelectedExtras(prev => 
+      prev.includes(extraId) 
+        ? prev.filter(id => id !== extraId)
+        : [...prev, extraId]
+    );
+  };
 
   // Filter destinations based on search criteria
   const filteredDestinations = destinationsData.destinations.filter((destination: Destination) => {
@@ -312,6 +371,121 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch
                   </div>
                   
                   {selectedRoom && (
+                    <div className="extras-section">
+                      <h3 className="extras-title">
+                        <span className="extras-icon">🛰️</span>
+                        Enhance Your Space Adventure
+                      </h3>
+                      <p className="extras-subtitle">
+                        Add extra equipment and experiences to make your trip unforgettable
+                      </p>
+                      
+                      <div className="extras-categories">
+                        {/* Space Suits Section */}
+                        <div className="extras-category">
+                          <h4 className="category-title">
+                            <span className="category-icon">👨‍🚀</span>
+                            Space Suits
+                          </h4>
+                          <div className="extras-grid">
+                            {EXTRA_ITEMS.filter(item => item.category === 'spacesuit').map((extra) => (
+                              <div 
+                                key={extra.id}
+                                className={`extra-card ${selectedExtras.includes(extra.id) ? 'selected' : ''} ${extra.included ? 'included' : ''}`}
+                                onClick={() => handleExtraToggle(extra.id)}
+                              >
+                                <div className="extra-image-container">
+                                  <img 
+                                    src={extra.image} 
+                                    alt={extra.name}
+                                    className="extra-image"
+                                  />
+                                  {extra.included && (
+                                    <div className="included-badge">
+                                      <span>✓ Included</span>
+                                    </div>
+                                  )}
+                                  {!extra.included && (
+                                    <div className="extra-price-badge">
+                                      €{extra.price}
+                                      <span className="price-period">per person</span>
+                                    </div>
+                                  )}
+                                </div>
+                                
+                                <div className="extra-content">
+                                  <h5 className="extra-name">{extra.name}</h5>
+                                  <p className="extra-description">{extra.description}</p>
+                                  
+                                  {!extra.included && (
+                                    <div className="extra-selection">
+                                      <button 
+                                        className={`extra-toggle-btn ${selectedExtras.includes(extra.id) ? 'selected' : ''}`}
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          handleExtraToggle(extra.id);
+                                        }}
+                                      >
+                                        {selectedExtras.includes(extra.id) ? 'Remove' : 'Add to Trip'}
+                                      </button>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* Vehicles Section */}
+                        <div className="extras-category">
+                          <h4 className="category-title">
+                            <span className="category-icon">🚗</span>
+                            Exploration Vehicles
+                          </h4>
+                          <div className="extras-grid">
+                            {EXTRA_ITEMS.filter(item => item.category === 'vehicle').map((extra) => (
+                              <div 
+                                key={extra.id}
+                                className={`extra-card ${selectedExtras.includes(extra.id) ? 'selected' : ''}`}
+                                onClick={() => handleExtraToggle(extra.id)}
+                              >
+                                <div className="extra-image-container">
+                                  <img 
+                                    src={extra.image} 
+                                    alt={extra.name}
+                                    className="extra-image"
+                                  />
+                                  <div className="extra-price-badge">
+                                    €{extra.price}
+                                    <span className="price-period">per day</span>
+                                  </div>
+                                </div>
+                                
+                                <div className="extra-content">
+                                  <h5 className="extra-name">{extra.name}</h5>
+                                  <p className="extra-description">{extra.description}</p>
+                                  
+                                  <div className="extra-selection">
+                                    <button 
+                                      className={`extra-toggle-btn ${selectedExtras.includes(extra.id) ? 'selected' : ''}`}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleExtraToggle(extra.id);
+                                      }}
+                                    >
+                                      {selectedExtras.includes(extra.id) ? 'Remove' : 'Add to Trip'}
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {selectedRoom && (
                     <div className="booking-summary">
                       <div className="summary-content">
                         <h4>Booking Summary</h4>
@@ -332,9 +506,40 @@ const SearchResults: React.FC<SearchResultsProps> = ({ searchData, onClearSearch
                             <span>Travelers:</span>
                             <span>{searchData.numberOfPeople} person{searchData.numberOfPeople !== 1 ? 's' : ''}</span>
                           </div>
+                          
+                          {/* Room cost breakdown */}
+                          <div className="summary-item">
+                            <span>Room ({duration} nights):</span>
+                            <span>€{(ROOM_TYPES.find(r => r.id === selectedRoom)!.price * duration * searchData.numberOfPeople).toLocaleString()}</span>
+                          </div>
+                          
+                          {/* Extras cost breakdown */}
+                          {selectedExtras.filter(extraId => {
+                            const extra = EXTRA_ITEMS.find(e => e.id === extraId);
+                            return extra && !extra.included;
+                          }).map(extraId => {
+                            const extra = EXTRA_ITEMS.find(e => e.id === extraId)!;
+                            const multiplier = extra.category === 'vehicle' ? duration : searchData.numberOfPeople;
+                            const cost = extra.price * multiplier;
+                            return (
+                              <div key={extraId} className="summary-item extra-item">
+                                <span>{extra.name}:</span>
+                                <span>€{cost.toLocaleString()}</span>
+                              </div>
+                            );
+                          })}
+                          
                           <div className="summary-item total">
                             <span>Total Cost:</span>
-                            <span>€{(ROOM_TYPES.find(r => r.id === selectedRoom)!.price * duration * searchData.numberOfPeople).toLocaleString()}</span>
+                            <span>€{(
+                              ROOM_TYPES.find(r => r.id === selectedRoom)!.price * duration * searchData.numberOfPeople +
+                              selectedExtras.reduce((sum, extraId) => {
+                                const extra = EXTRA_ITEMS.find(e => e.id === extraId);
+                                if (!extra || extra.included) return sum;
+                                const multiplier = extra.category === 'vehicle' ? duration : searchData.numberOfPeople;
+                                return sum + (extra.price * multiplier);
+                              }, 0)
+                            ).toLocaleString()}</span>
                           </div>
                         </div>
                         

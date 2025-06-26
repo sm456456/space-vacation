@@ -634,6 +634,206 @@
   background: linear-gradient(45deg, #764ba2 0%, #667eea 100%);
 }
 
+/* Extras Section */
+.extras-section {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.extras-title {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.extras-icon {
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+.extras-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.extras-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.extras-category {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-title {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-icon {
+  font-size: 1.6rem;
+  opacity: 0.9;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.extra-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.extra-card:hover {
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.extra-card.selected {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.extra-card.included {
+  border-color: rgba(46, 213, 115, 0.5);
+  background: rgba(46, 213, 115, 0.1);
+}
+
+.extra-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.extra-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.extra-card:hover .extra-image {
+  transform: scale(1.05);
+}
+
+.included-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(45deg, #2ed573, #20bf6b);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(46, 213, 115, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.extra-price-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.extra-price-badge .price-period {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.extra-content {
+  padding: 20px;
+}
+
+.extra-name {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.extra-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.extra-selection {
+  margin-top: 15px;
+}
+
+.extra-toggle-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.extra-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.extra-toggle-btn.selected {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.extra-toggle-btn.selected:hover {
+  background: linear-gradient(45deg, #764ba2, #667eea);
+}
+
+/* Booking Summary Updates for Extras */
+.extra-item {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .search-results {
@@ -697,5 +897,30 @@
   .summary-item.total {
     flex-direction: row;
     justify-content: space-between;
+  }
+  
+  .extras-section {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .extras-title {
+    font-size: 1.5rem;
+  }
+  
+  .extras-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .extra-card {
+    margin-bottom: 15px;
+  }
+  
+  .extras-categories {
+    gap: 30px;
+  }
+  
+  .extras-category {
+    padding: 20px;
   }
 }
