@@ -6,10 +6,6 @@ interface DestinationCardProps {
 }
 
 const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
-    // Debug: Log the destination data
-    console.log("Destination data:", destination);
-    console.log("Amenities:", destination.hotel?.amenities);
-    console.log("Good to know:", destination.goodToKnow);
 
     return (
         <div className="destination-card">

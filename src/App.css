@@ -1,42 +1,215 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-header {
-  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a3e 50%, #000033 100%);
-  padding: 40px 20px 60px 20px;
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
+    background: linear-gradient(
+        135deg,
+        #2d1b69 0%,
+        #1a1a3e 25%,
+        #4b0082 50%,
+        #301934 75%,
+        #191970 100%
+    );
+    padding: 40px 20px 60px 20px;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+    position: relative;
+    overflow: hidden;
+}
+
+.App-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(3px 3px at 50px 100px, #fff, transparent),
+        radial-gradient(
+            2px 2px at 150px 50px,
+            rgba(255, 255, 255, 0.9),
+            transparent
+        ),
+        radial-gradient(1px 1px at 250px 200px, #fff, transparent),
+        radial-gradient(
+            2px 2px at 350px 80px,
+            rgba(255, 255, 255, 0.7),
+            transparent
+        ),
+        radial-gradient(1px 1px at 450px 150px, #fff, transparent),
+        radial-gradient(
+            3px 3px at 550px 30px,
+            rgba(255, 255, 255, 0.8),
+            transparent
+        ),
+        radial-gradient(1px 1px at 650px 120px, #fff, transparent),
+        radial-gradient(
+            2px 2px at 750px 180px,
+            rgba(255, 255, 255, 0.6),
+            transparent
+        ),
+        radial-gradient(1px 1px at 850px 70px, #fff, transparent),
+        radial-gradient(
+            2px 2px at 950px 160px,
+            rgba(255, 255, 255, 0.9),
+            transparent
+        ),
+        radial-gradient(3px 3px at 1050px 40px, #fff, transparent),
+        radial-gradient(
+            1px 1px at 1150px 110px,
+            rgba(255, 255, 255, 0.8),
+            transparent
+        ),
+        radial-gradient(2px 2px at 80px 250px, #fff, transparent),
+        radial-gradient(
+            1px 1px at 180px 300px,
+            rgba(255, 255, 255, 0.7),
+            transparent
+        ),
+        radial-gradient(3px 3px at 280px 350px, #fff, transparent),
+        radial-gradient(
+            2px 2px at 380px 280px,
+            rgba(255, 255, 255, 0.9),
+            transparent
+        ),
+        radial-gradient(1px 1px at 480px 320px, #fff, transparent),
+        radial-gradient(
+            2px 2px at 580px 270px,
+            rgba(255, 255, 255, 0.6),
+            transparent
+        ),
+        radial-gradient(1px 1px at 680px 330px, #fff, transparent),
+        radial-gradient(
+            3px 3px at 780px 290px,
+            rgba(255, 255, 255, 0.8),
+            transparent
+        );
+    background-repeat: repeat;
+    background-size: 1200px 400px;
+    animation: starsFloat 25s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.App-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+            1px 1px at 120px 320px,
+            rgba(186, 85, 211, 0.8),
+            transparent
+        ),
+        radial-gradient(
+            2px 2px at 320px 120px,
+            rgba(138, 43, 226, 0.6),
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 520px 280px,
+            rgba(147, 0, 211, 0.7),
+            transparent
+        ),
+        radial-gradient(
+            2px 2px at 720px 180px,
+            rgba(75, 0, 130, 0.8),
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 920px 350px,
+            rgba(106, 13, 173, 0.6),
+            transparent
+        ),
+        radial-gradient(
+            3px 3px at 220px 80px,
+            rgba(186, 85, 211, 0.5),
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 420px 240px,
+            rgba(138, 43, 226, 0.7),
+            transparent
+        ),
+        radial-gradient(
+            2px 2px at 620px 340px,
+            rgba(75, 0, 130, 0.6),
+            transparent
+        );
+    background-repeat: repeat;
+    background-size: 1000px 400px;
+    animation: purpleStarsFloat 30s linear infinite reverse;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .App-header h1 {
-  margin: 40px 0 0 0;
-  font-size: 3.5rem;
-  font-weight: bold;
-  background: linear-gradient(45deg, #fff, #ccc, #fff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  animation: glow 2s ease-in-out infinite alternate;
+    margin: 40px 0 0 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(
+        45deg,
+        #fff 0%,
+        #e6e6fa 25%,
+        #dda0dd 50%,
+        #fff 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: cosmicGlow 3s ease-in-out infinite alternate;
 }
 
 .App-header p {
-  margin: 10px 0 20px 0;
-  font-size: 1.2rem;
-  opacity: 0.9;
+    margin: 10px 0 20px 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  }
-  to {
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.3);
-  }
+.App-header > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes cosmicGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+            0 0 30px rgba(186, 85, 211, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 40px rgba(138, 43, 226, 0.5), 0 0 50px rgba(186, 85, 211, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.9),
+            0 0 50px rgba(147, 0, 211, 0.6), 0 0 60px rgba(75, 0, 130, 0.4);
+    }
+}
+
+/* Star animations for App header */
+@keyframes starsFloat {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-1200px) translateY(-200px);
+    }
+}
+
+@keyframes purpleStarsFloat {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-1000px) translateY(-150px);
+    }
 }
